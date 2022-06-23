@@ -52,7 +52,7 @@ jobs:
 
   build-backend:
     docker:
-      - image: ciimg/node:13.8.0
+      - image: cimg/node:13.8.0
     steps:
       - checkout
       - restore_cache:
