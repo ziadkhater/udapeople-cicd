@@ -203,9 +203,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - project/.circleci/ansible/inventory.txt
-      
-      # Here's where you will add some code to rollback on failure      
+            - project/.circleci/ansible/inventory.txt    
       - destroy-environment
 
 
@@ -340,14 +338,14 @@ jobs:
 #             fi
             
 
-  notify_on_success:
-    docker: 
-      - image: cimg/base:stable
-    steps:
-      - slack/notify:
-          event: pass
-          channel: cicd-pipeline
-          template: success_tagged_deployment_1
+  # notify_on_success:
+  #   docker: 
+  #     - image: cimg/base:stable
+  #   steps:
+  #     - slack/notify:
+  #         event: pass
+  #         channel: cicd-pipeline
+  #         template: success_tagged_deployment_1
 
 
 workflows:
